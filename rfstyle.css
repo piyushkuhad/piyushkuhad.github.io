@@ -642,50 +642,186 @@ h2.cm-section-head {
 /*===============Contact Section Styling====================*/
 
 .cm-contact-section {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
     position: relative;
+}
+
+.cm-contact-section .cm-left-col {
+    -ms-flex: 1;
+    flex: 1;
+    max-width: 50vw;
+}
+
+.cm-contact-inner {
     min-height: 100vh;
-    background-color: #eaeaea;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 80px;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
 }
 
-.cm-contact-section .cm-contact-content {
-    position: absolute;
-    z-index: 11;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 50%;
+.cm-contact-top h2 {
+    font-size: 76px;
+    color: #000;
+    line-height: 80px;
+    margin-top: 0;
+    margin-bottom: 16px;
 }
 
-.cm-contact-content h2,
-.cm-contact-content h3 {
-    letter-spacing: 2px;
+.cm-contact-top p {
+    margin-bottom: 72px;
+    max-width: 560px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #000;
+}
+
+.cm-contact-info h4 {
+    margin-top: 0;
+    color: #000;
+    line-height: 32px;
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.cm-contact-info p {
+    font-size: 19px;
+    line-height: 32px;
+    color: #000;
+    margin: 0;
+}
+
+.cm-contact-info p a {
     color: #57b820;
 }
 
-.cm-contact-section .cm-contact-bg {
-    background-image: url('Images/communication-contact-conversation-33999.jpg');
-    min-height: 100vh;
-    background-size: cover;
+.cm-contact-section .cm-right-col {
+    background: #57b820;
     position: absolute;
+    right: 0;
+    height: 100%;
     top: 0;
-    left: 0;
-    width: 100%;
+    bottom: 0;
+    width: 50%;
 }
 
-.cm-contact-section .cm-cta {
-    display: inline-block;
-    cursor: pointer;
-    background-color: #57b820;
-    padding: 15px;
-    border: none;
-    outline: none;
-    margin-top: 15px;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+.cm-contact-title {
+    padding: 80px;
 }
+
+.cm-contact-title h2 {
+    font-size: 76px;
+    color: #fff;
+    margin-top: 0;
+    line-height: 80px;
+    margin-bottom: 16px;
+}
+
+.cm-contact-title p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    max-width: 560px;
+    color: #fff;
+    font-size: 19px;
+    line-height: 32px;
+}
+
+.cm-contact-title p a {
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    padding: 0 2px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.cm-contact-title p a span {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.cm-contact-title p a:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    transform: translate3d(0,0,0);
+    transition: all .4s;
+    transition-timing-function: cubic-bezier(.7,0,.3,1);
+    border-radius: 2px;
+    background: rgba(255,255,255,.5);
+}
+
+.cm-contact-title p a:hover:after {
+    height: 100%;
+    background: rgba(255,255,255,.25);
+    border-radius: 4px;
+}
+
+.cm-contact-title p svg {
+    margin-left: 8px;
+}
+
+.cm-contact-title p a:hover svg path {
+    fill: #fff;
+    transition: all .4s;
+    transition-timing-function: cubic-bezier(.7,0,.3,1);
+}
+
+.cm-contact-title p a svg path {
+    transition: all .4s;
+    transition-timing-function: cubic-bezier(.7,0,.3,1);
+}
+
+.cm-contact-section form input, 
+.cm-contact-section form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin-bottom: 10px;
+    outline: none;
+    font-family: "Source Sans Pro",sans-serif;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.cm-contact-section form input[type="submit"] {
+    width: auto;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 20px;
+    font-family: "Source Sans Pro",sans-serif;
+    letter-spacing: 2px;
+    font-size: 18px;
+    border: none;
+    color: #57b820;
+    background-color: #fff;
+    outline: none;
+}
+
+.cm-contact-section form {
+    padding-bottom: 20px;
+}
+
+.cm-contact-section form textarea {
+    min-height: 80px;
+}
+
 
 .ripple {
     box-shadow: 0 0 4px #999;
@@ -1012,10 +1148,6 @@ h2.cm-section-head {
         flex-flow: column-reverse;
     }
     
-    .cm-contact-section .cm-contact-bg {
-        transform: none !important;
-    }
-    
     div#cm-people {
         padding-bottom: 30px;
     }
@@ -1026,10 +1158,6 @@ h2.cm-section-head {
     
     div#people {
         padding: 50px 0;
-    }
-    
-    .cm-contact-content h2, .cm-contact-content h3 {
-        margin-top: 0;
     }
 
     section.cm-par-cont .video-par {
@@ -1088,6 +1216,17 @@ h2.cm-section-head {
     
     .cm-career-section > h2 {
         font-size: 40px;
+    }
+
+    .cm-contact-inner,
+    .cm-contact-title {
+        padding: 40px 40px 120px;
+        min-height: auto;
+    }
+
+    .cm-contact-top h2,
+    .cm-contact-title h2 {
+        font-size: 50px;
     }
 
 }
@@ -1165,20 +1304,6 @@ h2.cm-section-head {
     
     .cm-par-pages > div {
         padding: 20px 15px;
-    }
-    
-    .cm-contact-section .cm-contact-content {
-        max-width: 90%;
-        background-color: rgba(255,255,255,0.6);
-        padding: 15px;
-    }
-    
-    .cm-contact-content h2 {
-        font-size: 22px;
-    }
-    
-    .cm-contact-content h3 {
-        font-size: 20px;
     }
 
     .custom-logo img {
@@ -1266,6 +1391,33 @@ h2.cm-section-head {
     
     .menu-trigger {
         right: 159px;
+    }
+
+    .cm-contact-section {
+        display: block;
+    }
+    
+    .cm-contact-section .cm-left-col {
+        max-width: 100%;
+    }
+    
+    .cm-contact-section .cm-right-col {
+        position: static;
+        width: 100%;
+    }
+    
+    .cm-contact-inner, .cm-contact-title {
+        padding: 20px 15px;
+        min-height: unset;
+    }
+    
+    .cm-contact-top p {
+        margin-bottom: 25px;
+    }
+    
+    .cm-contact-top h2, .cm-contact-title h2 {
+        font-size: 40px;
+        line-height: 1.5;
     }
 
 } 
