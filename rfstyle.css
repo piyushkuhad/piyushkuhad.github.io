@@ -653,6 +653,11 @@ h2.cm-section-head {
     -ms-flex: 1;
     flex: 1;
     max-width: 50vw;
+    background-image: url('Images/apartment-architecture-bright-day-1024248.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
 }
 
 .cm-contact-inner {
@@ -666,6 +671,18 @@ h2.cm-section-head {
     padding: 80px;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+.cm-contact-section .cm-left-col:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
 }
 
 .cm-contact-top h2 {
