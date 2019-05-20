@@ -221,8 +221,8 @@ path.telephone-part.handset {
 .side-open .cm-header-form {
     background: rgb(255,255,255);
     width: 100%;
-    height: calc(100vh - 125px);
-    top: 125px;
+    height: calc(100vh - 104px);
+    top: 104px;
     right: 0;
     position: fixed;
     overflow: auto;
@@ -1538,8 +1538,8 @@ span.cm-plus:after {
     }
 
     .side-open .sticky .cm-header-form {
-        top: 63px;
-        height: calc(100vh - 63px);
+        top: 80px;
+        height: calc(100vh - 80px);
     }
 
     .cm-client-spacer {
@@ -1629,7 +1629,7 @@ span.cm-plus:after {
 @media(max-width: 991px) {
 
     .cm-header-container .custom-logo {
-        width: 15%;
+        width: 21%;
         float: none;
         display: inline-block;
         padding: 15px 0 0 15px;
