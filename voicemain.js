@@ -43,6 +43,13 @@ $(document).ready(function(){
 	while(n > 0){
 		$(".animation-container").append($(".animation-container").children().first());
 		n -= 1;
-	}
+    }
+    
+    var backTopBtn = $('#back-to-top');
+
+    backTopBtn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '600');
+    });
 
 });
