@@ -1,6 +1,6 @@
 $(document).ready(function(){
     AOS.init();
-
+    let counter = 0;
     const vpView = () => {
         $.fn.visible = function(partial) {
     
@@ -17,12 +17,19 @@ $(document).ready(function(){
       
         };
         let btnTime;
+        let sound = document.getElementById("alexa-sound");
+        let playPromise  = sound.play();
+        sound.load();
         $(window).scroll(function(event) {
       
             $(".cm-alexa-container img").each(function(i, el) {
               var el = $(el);
               if (el.visible(true)) {
                 $('.cm-conv-section').addClass("conv-active"); 
+                if(counter===0){
+                    sound.play();
+                    counter = 1;
+                }
                 btnTime = setTimeout(function(){ 
                     $('.cm-conv-section .cm-conv-btn').addClass("btn-active"); 
                 }, 5500);
@@ -33,10 +40,26 @@ $(document).ready(function(){
         });
     }
 
-    vpView();
+    // vpView();
 
-    $(window).resize(function(){
-        vpView();
+    // $(window).resize(function(){
+    //     vpView();
+    // });
+    let btnTime1;
+    let sound1 = document.getElementById("alexa-sound");
+    $('.test-btn').click(function(){
+        $(this).parents('.cm-conv-section').addClass("test-active");
+        setTimeout(function(){
+            $('.cm-conv-section').addClass("conv-active"); 
+            if(counter===0){
+                sound1.play();
+                counter = 1;
+            }
+            btnTime1 = setTimeout(function(){ 
+                $('.cm-conv-section .cm-conv-btn').addClass("btn-active"); 
+            }, 3000);
+            btnTime1;
+        }, 500);
     });
 
     var n = 1;
